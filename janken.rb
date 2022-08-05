@@ -27,13 +27,13 @@ else
     return false
 end
 
-
-end
-
 draw = true
 while draw
     draw = janken
 end
+end
+
+janken
 
 
 def next_game
@@ -82,11 +82,3 @@ end
 end
 
 next_game
-
-
-
-
-
-
-
-
