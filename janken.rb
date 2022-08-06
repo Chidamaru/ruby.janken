@@ -1,10 +1,6 @@
-
-
 puts "ジャンケン・・・(0:グー)or(1:チョキ)or(2:パー)"
 
 def janken
-    
-    
     
 player_hand = gets.to_i
 program_hand = rand(0..2)
@@ -15,8 +11,8 @@ puts "あなた：#{janken[player_hand]}\n相手：#{janken[program_hand]}"
 
 if player_hand == program_hand
     puts "あいこで・・・"
+    @case_pattern = "janken_draw"
     return true
-    
 elsif (player_hand == 0 && program_hand == 1) || (player_hand == 1 && program_hand == 2) || (player_hand == 2 && program_hand ==0)
     @case_pattern = "janken_win"
     puts "ジャンケンはあなたの勝ち"
@@ -27,13 +23,12 @@ else
     return false
 end
 
+end
+
 draw = true
 while draw
     draw = janken
 end
-end
-
-janken
 
 
 def next_game
@@ -54,12 +49,14 @@ else
     puts "引き分け"
     puts "ジャンケン・・・(0:グー)or(1:チョキ)or(2:パー)"
     janken
+    draw = true
+    while draw
+        draw = janken
+    end
     next_game
 end
 
-
 end 
-
 
 case @case_pattern
 when "janken_rose"
@@ -71,14 +68,13 @@ else
     puts "引き分け"
     puts "ジャンケン・・・(0:グー)or(1:チョキ)or(2:パー)"
     janken
+    draw = true
+    while draw
+        draw = janken
+    end
     next_game
 end
-
-
 end
-
-
-
 end
 
 next_game
